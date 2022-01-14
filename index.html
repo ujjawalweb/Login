@@ -1,0 +1,142 @@
+<!Doctype html>
+<html>
+<head>
+<title>Js project</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ebe4a3;
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  color: #222;
+}
+
+
+
+#form {margin:auto;margin-top:100px;
+    max-width: 700px;
+	border-radius:10px;
+    padding: 2rem;
+background-color: #7f53ac;
+background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+
+
+    box-sizing: border-box;}
+
+.form-field {
+  display: flex;margin-left: 150px !important;
+  margin: 0 0 1rem 0;
+}
+label, input {
+  width: 70%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  justify-content: space-between;
+  font-size: 1.1rem;
+}
+label {
+  text-align: right;
+  width: 30%;
+}
+input {
+  border: 1px solid #aaa;
+  border-radius: 10px;
+}
+input:focus{border:none;outline:none;}
+
+.btn{width:130px;height:40px;background:#673ab7;color:#fff;border:none;border-radius:10px;font-size:17px;margin-top:5px;}
+.btn2{width:130px;height:40px;background:red;color:#fff;border:none;border-radius:10px;font-size:17px;margin-top:20px;}
+
+h2{margin-top:10px;margin-bottom:30px;color:#fff;text-align:center;}
+
+#msg{color: #ffeb3b;text-align:center;
+    position: relative;
+    top: -9px;}
+</style>
+</head>
+
+<body>
+
+
+
+<form method="post" action="https://ludodhamaal.com/" method="post" id="form" class="validate" onsubmit="return test();">
+
+<h2>Login Form</h2>
+  <div class="form-field">
+
+    <input type="text" name="full-name" id="full-name" placeholder="Username"  />
+	   
+  </div>
+
+  <div class="form-field">
+
+    <input type="email" name="email-input" id="email-input" placeholder="Email"  />
+  </div>
+  <div class="form-field">
+
+    <input type="password" name="password-input" id="password-input" placeholder="Password"  />
+	 
+  </div>
+ <h5 id="msg"></h5>
+ 
+<center><button class="btn">Submit</button></center>
+
+
+</form>
+<center><button class="btn2" id="my-bt" onclick="bts()">Subscribe</button></center>
+
+<script>
+function test(){
+var name=document.getElementById("full-name").value;
+var mail=document.getElementById("email-input").value;
+
+var pass=document.getElementById("password-input").value;
+
+var validEmail=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+var message=document.getElementById("msg");
+
+
+if(name==""){
+
+message.innerHTML="plz write username";
+return false;
+}
+
+else if(mail==""){
+
+message.innerHTML="plz write email *";
+return false;
+}
+
+else if(validEmail.test(mail)==false){
+
+message.innerHTML="plz enter valid email";
+return false;
+}
+
+else if(pass==""){
+message.innerHTML="plz write Password *" ;
+return false;
+
+}
+
+else{ return true;}
+
+}
+
+function bts(){
+var btt=document.getElementById("my-bt")
+
+btt.innerHTML="Subscribed";
+
+}
+
+</script>
+</body>
+</html>
